@@ -12,10 +12,9 @@ export default class GifResults extends Component {
     const { searchString, gifData } = this.props;
     return (
       <Fragment>
-        <h2>Results</h2>
         {gifData.map(({ title, imageBig }) => (
-          <div key={imageBig}>
-            <h3>{title}</h3>
+          <div key={title} style={{margin: '3rem'}}>
+            <h3 className="ui violet header">{title ? title : "No Title"}</h3>
             <div>
               <img alt="gif" style={{ height: `250px` }} src={imageBig} />
             </div>
