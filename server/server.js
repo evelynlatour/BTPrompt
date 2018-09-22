@@ -6,10 +6,6 @@ const webpack = require(`webpack`);
 const webpackDevMiddleware = require(`webpack-dev-middleware`);
 const chalk = require(`chalk`);
 const graphqlHTTP = require(`express-graphql`);
-const { db } = require(`./db/index`);
-
-const mySchema = require(`./schema/schema`);
-
 
 const app = express();
 const config = require(`../webpack.config.js`);
@@ -29,13 +25,13 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }));
 
-app.use(`/api`, require(`./api`));
+// app.use(`/api`, require(`./api`));
 
 // GRAPH-I-QL
-app.use(`/graphql`, graphqlHTTP({
-  schema: mySchema,
-  graphiql: true,
-}));
+// app.use(`/graphql`, graphqlHTTP({
+//   schema: mySchema,
+//   graphiql: true,
+// }));
 
 app.get(`*`, (req, res) => {
   res.sendFile(path.join(__dirname, `../public/index.html`));
@@ -43,7 +39,6 @@ app.get(`*`, (req, res) => {
 
 const startApp = async () => {
   try {
-    await db.sync();
     app.listen(3000, () => {
       console.log(chalk.cyan(`- - - Server listening on port ${3000} - - - `));
     });
