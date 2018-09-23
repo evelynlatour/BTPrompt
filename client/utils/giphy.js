@@ -6,7 +6,7 @@ const composeRequest = (
   base = `https://api.giphy.com`,
   endpoint = `/v1/gifs/search`,
   key = `rJVJ5cXQNf9S6FK9mtsafkoHfSJ6QIvT`,
-  qualifiers = `limit=5`,
+  qualifiers = `limit=20`,
 ) => {
   // turn spaces into '+' as required by api endpoint
   const plusString = searchString.split(` `).join(`+`);
@@ -22,6 +22,7 @@ const getSelectData = giphyObject =>
     imageBig: gif.images.original.url,
     imageSmall: gif.images.downsized.url,
     url: gif.url,
+    embedUrl: gif.embed_url,
   }));
 
 export { composeRequest, getSelectData };
