@@ -8,10 +8,10 @@ export default class GifResults extends Component {
   };
 
   render() {
-    const { searchString, gifData } = this.props;
+    const { gifsToDisplay } = this.props;
     return (
       <Fragment>
-        {gifData.map(({
+        {gifsToDisplay.map(({
           title, imageBig, url, imageSmall, embedUrl,
         }) => (
           <div key={embedUrl} style={{ marginBottom: `4.5rem` }}>
