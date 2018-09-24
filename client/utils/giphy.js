@@ -3,15 +3,15 @@
 // put together http requests
 const composeRequest = (
   searchString,
+  numGifsToRequest,
   base = `https://api.giphy.com`,
   endpoint = `/v1/gifs/search`,
   key = `rJVJ5cXQNf9S6FK9mtsafkoHfSJ6QIvT`,
-  qualifiers = `limit=20`,
 ) => {
   // turn spaces into '+' as required by api endpoint
   const plusString = searchString.split(` `).join(`+`);
   // compose url
-  const request = `${base + endpoint}?q=${plusString}&api_key=${key}&${qualifiers}`;
+  const request = `${base + endpoint}?q=${plusString}&api_key=${key}&limit=${numGifsToRequest}`;
   return request;
 };
 
