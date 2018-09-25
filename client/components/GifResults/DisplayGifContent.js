@@ -8,7 +8,7 @@ const DisplayGifContent = ({ gif: { imageBig, url, title } }) => (
       </a>
     </h3>
     <div>
-      <img alt="gif" style={{ height: `280px` }} src={imageBig} />
+      <img alt="gif" src={imageBig} />
     </div>
   </div>
 );

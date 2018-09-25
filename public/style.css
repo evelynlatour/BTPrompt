@@ -1,26 +1,52 @@
 * {
-  text-align: center;
   font-family: Helvetica;
- 
-}
-body {
-  padding: 5px;
-  margin: 25px;
 }
 
 div {
+  text-align: center;
 }
 
-li {
-  /* font-size: 1.3rem;
-  padding: .2rem; */
+body {
+  padding: .5rem;
+  margin: 2rem;
 }
 
-h1 {
-  /* margin: 1rem; */
+.ui.middle.aligned.grid {
+  margin: 3.5rem;
 }
 
-.links {
-  /* font-size: 1.1rem;
-  font-weight: bold; */
+.gif {
+  margin-bottom: 4.5rem;
+}
+
+.gif img {
+  height: 23rem;
+  margin-bottom: .5rem;
+}
+
+#copy-url-bar {
+  width: 17rem;
+}
+
+#header-image {
+  width: 16rem
+}
+
+#search-input {
+  width: 21rem
+}
+
+#search-wrapper {
+  padding-right: 5.8rem;
+  margin-bottom: 6rem;
+}
+
+#clear-search-button {
+  position: absolute;
+  top: .7rem;
+  left: 28rem;
+}
+
+#show-more-gifs-button {
+  margin-bottom: 4rem
 }

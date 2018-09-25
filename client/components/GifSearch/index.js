@@ -7,7 +7,7 @@ import SearchBar from "./SearchBar";
 import NoGifsError from "./NoGifsError";
 import ShowMoreGifs from "./ShowMoreGifs";
 
-export default class App extends Component {
+export default class GifSearch extends Component {
   state = {
     searchString: ``,
     gifData: [],

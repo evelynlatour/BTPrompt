@@ -14,7 +14,7 @@ export default class GifResults extends Component {
     return (
       <Fragment>
         {gifsToDisplay.map(gif => (
-          <div key={gif.embedUrl} style={{ marginBottom: `4.5rem` }}>
+          <div key={gif.embedUrl} className="gif">
             <DisplayGifContent gif={gif}/>
             <CopyGifUrl embedUrl={gif.embedUrl} handleCopy={this.handleCopy} />
           </div>

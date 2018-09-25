@@ -4,8 +4,8 @@ const ShowMoreGifs = ({
   gifsToDisplay, gifData, handleAdditionalApiCall, handleShowMoreGifs,
 }) => (
   <button
-    className="ui teal button"
-    style={{ marginBottom: `4rem` }}
+    className="ui large pink button"
+    id="show-more-gifs-button"
     onClick={
       gifData.length === gifsToDisplay.length
         ? () => handleAdditionalApiCall(event)

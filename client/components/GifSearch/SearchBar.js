@@ -8,23 +8,22 @@ const SearchBar = ({
   searchString,
   noResults,
 }) => (
-  <div style={{ textAlign: `center`, paddingRight: `5.8rem`, marginBottom: `5rem` }}>
+  <div id="search-wrapper">
     <form className="ui form">
       <div className="ui large action input">
         <input
           type="text"
           name="searchString"
           placeholder="enter text here"
-          style={{ width: `300px` }}
+          id="search-input"
           value={searchString}
           onChange={handleChange}
         />
         <button
           type="submit"
-          className="ui button"
+          className="ui large button"
           disabled={!searchString}
           onClick={handleSubmit}
-          style={{ fontSize: `1.3rem` }}
         >
           Go!
         </button>
@@ -34,11 +33,7 @@ const SearchBar = ({
               ? `large undo teal alternate link icon`
               : `large disabled undo alternate icon`
           }
-          style={{
-            position: `absolute`,
-            top: `11px`,
-            left: `400px`,
-          }}
+          id="clear-search-button"
           onClick={clearInput}
         />
       </div>
