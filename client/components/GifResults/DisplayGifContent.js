@@ -1,4 +1,5 @@
 import React from "react";
+import GifImage from './GifImage'
 
 const DisplayGifContent = ({ gif: { imageBig, url, title } }) => (
   <div>
@@ -8,7 +9,8 @@ const DisplayGifContent = ({ gif: { imageBig, url, title } }) => (
       </a>
     </h3>
     <div>
-      <img alt="gif" src={imageBig} />
+      {/* <img alt="gif" src={imageBig} /> */}
+      <GifImage imageBig={imageBig} />
     </div>
   </div>
 );

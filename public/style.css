@@ -24,8 +24,19 @@ body {
   margin-bottom: .5rem;
 }
 
+#gif-placeholder {
+  height: 23rem;
+  width: 32rem;
+  background-color: #ededed;
+  margin: auto auto .8rem auto;
+}
+
+#gif-placeholder i {
+  margin-top: 9.5rem;
+}
+
 #copy-url-bar {
-  width: 17rem;
+  width: 19rem;
 }
 
 #header-image {
