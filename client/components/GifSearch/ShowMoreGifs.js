@@ -1,7 +1,10 @@
 import React from "react";
 
 const ShowMoreGifs = ({
-  gifsToDisplay, gifData, handleAdditionalApiCall, handleShowMoreGifs,
+  gifsToDisplay,
+  gifData,
+  handleAdditionalApiCall,
+  handleShowMoreGifs,
 }) => (
   <button
     className="ui large pink button"

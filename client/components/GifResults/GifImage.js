@@ -1,5 +1,9 @@
 import React, { Component, Fragment } from "react";
 
+/* Each image's state begins as loaded: false, causing a "loading" placeholder
+div to be displayed instead of img (display set to none).
+On img load, state is flipped and image displayed instead. */
+
 export default class GifImage extends Component {
   state = {
     loaded: false,

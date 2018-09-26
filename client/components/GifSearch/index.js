@@ -13,8 +13,8 @@ export default class GifSearch extends Component {
     gifData: [],
     gifsToDisplay: [],
     noResults: false,
-    amountOfGifsToDisplay: 10,
-    additionalGifsToDisplay: 10,
+    amountOfGifsToDisplay: 5,
+    additionalGifsToDisplay: 5,
     gifsToRequestFromApi: 20,
     additionalGifsToRequest: 20,
   };
@@ -23,6 +23,8 @@ export default class GifSearch extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  /* Function fired at every new giphy API request:
+  Initial search + request for more gifs beyond initial num of 'gifsToRequestFromApi' */
   handleSubmit = async (event) => {
     event.preventDefault();
     const {
@@ -38,6 +40,9 @@ export default class GifSearch extends Component {
     const result = getSelectData(data);
     console.log(result);
 
+    /* Logic to handle initial number of gifs to display, increment the amount to request from
+    API the next time a new request is triggered, and the event that no results returned 
+    from search string */
     result.length
       ? this.setState(prevState => ({
         gifData: [...result],
@@ -51,11 +56,16 @@ export default class GifSearch extends Component {
     this.setState({ searchString: ``, gifData: [], noResults: false });
   };
 
+
+  /* Handles displaying more gifs. Does not make new call to the API, just displays more
+  from the gifData array. */
   handleShowMoreGifs = () => {
     const {
-      gifData, gifsToDisplay, amountOfGifsToDisplay, additionalGifsToDisplay,
+      gifData,
+      gifsToDisplay,
+      amountOfGifsToDisplay,
+      additionalGifsToDisplay,
     } = this.state;
-
     const newAmountOfGifsToDisplay = amountOfGifsToDisplay + additionalGifsToDisplay;
 
     this.setState({
@@ -67,6 +77,8 @@ export default class GifSearch extends Component {
     });
   };
 
+  /* Fires only when user has shown all gifs from gifData, and would like to see more.
+  Makes another API request w/ new amount of gifsToRequestFromApi */
   handleAdditionalApiCall = async (event) => {
     await this.handleSubmit(event);
     this.handleShowMoreGifs();
@@ -74,7 +86,10 @@ export default class GifSearch extends Component {
 
   render() {
     const {
-      searchString, gifData, noResults, gifsToDisplay,
+      searchString,
+      gifData,
+      noResults,
+      gifsToDisplay,
     } = this.state;
 
     return (

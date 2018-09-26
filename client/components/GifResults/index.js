@@ -3,6 +3,8 @@ import CopyGifUrl from "./CopyGifUrl";
 import DisplayGifContent from "./DisplayGifContent";
 
 export default class GifResults extends Component {
+  
+  // enables functionality for user to copy embedded url with one click
   handleCopy = (embedUrl) => {
     const copyText = document.getElementById(embedUrl);
     copyText.select();
