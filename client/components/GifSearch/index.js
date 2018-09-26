@@ -6,6 +6,7 @@ import Header from "./Header";
 import SearchBar from "./SearchBar";
 import NoGifsError from "./NoGifsError";
 import ShowMoreGifs from "./ShowMoreGifs";
+import ScrollToTop from "./ScrollToTop";
 
 export default class GifSearch extends Component {
   state = {
@@ -34,9 +35,10 @@ export default class GifSearch extends Component {
       additionalGifsToRequest,
     } = this.state;
 
-    const {
-      data: { data },
-    } = await axios.get(composeRequest(searchString, gifsToRequestFromApi));
+    // Use helper func to construct url to hit correct giphy endpoint
+    const { data: { data } } = await axios.get(composeRequest(searchString, gifsToRequestFromApi));
+
+    // Use helper func to select only the data we are interested in from the API's response
     const result = getSelectData(data);
     console.log(result);
 
@@ -115,6 +117,7 @@ export default class GifSearch extends Component {
             />
           </Fragment>
         ) : null}
+        <ScrollToTop />
       </Fragment>
     );
   }
